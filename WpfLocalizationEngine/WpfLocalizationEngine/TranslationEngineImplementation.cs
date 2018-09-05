@@ -47,7 +47,7 @@ namespace WpfLocalizationEngine
 
             foreach (var item in Directory.GetFiles(Folder))
             {
-                if (!CheckForUnprotectedTranslation(item) || !item.Contains(".uiLanguage")) continue;
+                if (!CheckForUnprotectedTranslation(item) || !item.Contains(translationExtension)) continue;
                 var fi = new FileInfo(item);
                 LanguageList.Add(fi.Name.Substring(0, fi.Name.Length - fi.Extension.Length));
             }
